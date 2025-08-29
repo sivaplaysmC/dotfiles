@@ -1,0 +1,32 @@
+2025-08-02 14:15:29 INFO  (LoggingInitialization) Using log config file: jar:file:/tmp/ghidra_11.3.1_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-08-02 14:15:29 INFO  (LoggingInitialization) Using log file: /home/hknhmr/.config/ghidra/ghidra_11.3.1_PUBLIC/application.log  
+2025-08-02 14:15:30 INFO  (Preferences) Loading user preferences: /home/hknhmr/.config/ghidra/ghidra_11.3.1_PUBLIC/preferences  
+2025-08-02 14:15:41 INFO  (ClassSearcher) Searching for classes...  
+2025-08-02 14:15:42 INFO  (ClassSearcher) Class search complete (1249 ms)  
+2025-08-02 14:15:42 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-08-02 14:15:42 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-08-02 14:15:42 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-08-02 14:15:42 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-08-02 14:15:42 INFO  (GhidraRun) User hknhmr started Ghidra.  
+2025-08-02 14:15:42 INFO  (GhidraRun) User settings directory: /home/hknhmr/.config/ghidra/ghidra_11.3.1_PUBLIC  
+2025-08-02 14:15:42 INFO  (GhidraRun) User temp directory: /tmp/hknhmr-ghidra  
+2025-08-02 14:15:42 INFO  (GhidraRun) User cache directory: /var/tmp/hknhmr-ghidra  
+2025-08-02 14:15:42 DEBUG (DefaultProjectManager) No tools found; Installing default tools  
+2025-08-02 14:15:42 DEBUG (DefaultProjectManager) 	no recent project directories found  
+2025-08-02 14:15:43 DEBUG (RecoverySnapshotMgrPlugin) Recovery snapshot timer set to 5 minute(s)  
+2025-08-02 14:15:44 INFO  (GhidraRun) Ghidra startup complete (15132 ms)  
+2025-08-02 14:16:03 INFO  (LoggingInitialization) Using log config file: jar:file:/tmp/ghidra_11.3.1_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-08-02 14:16:03 INFO  (LoggingInitialization) Using log file: /home/hknhmr/.config/ghidra/ghidra_11.3.1_PUBLIC/application.log  
+2025-08-02 14:16:03 INFO  (Preferences) Loading user preferences: /home/hknhmr/.config/ghidra/ghidra_11.3.1_PUBLIC/preferences  
+2025-08-02 14:16:04 INFO  (ClassSearcher) Searching for classes...  
+2025-08-02 14:16:05 INFO  (ClassSearcher) Class search complete (1294 ms)  
+2025-08-02 14:16:05 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-08-02 14:16:05 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-08-02 14:16:05 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-08-02 14:16:05 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-08-02 14:16:05 INFO  (GhidraRun) User hknhmr started Ghidra.  
+2025-08-02 14:16:05 INFO  (GhidraRun) User settings directory: /home/hknhmr/.config/ghidra/ghidra_11.3.1_PUBLIC  
+2025-08-02 14:16:05 INFO  (GhidraRun) User temp directory: /tmp/hknhmr-ghidra  
+2025-08-02 14:16:05 INFO  (GhidraRun) User cache directory: /var/tmp/hknhmr-ghidra  
+2025-08-02 14:16:06 DEBUG (RecoverySnapshotMgrPlugin) Recovery snapshot timer set to 5 minute(s)  
+2025-08-02 14:16:06 INFO  (GhidraRun) Ghidra startup complete (4141 ms)  

@@ -1,0 +1,235 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "JetBrainsMono NFP", iosevka, Roboto, Helvetica, Arial,
+        sans-serif, "Font Awesome 5 Free";
+    font-size: 14px;
+}
+
+window#waybar {
+    /*    background-color: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
+    color: #cccccc;
+    background-color: #101010;
+    /*    transition-property: background-color;
+    transition-duration: .5s;*/
+}
+
+window {
+    background-color: #191919;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+#workspaces button {
+    margin: 0px 0px;
+    background-color: #000000;
+    color: #2a2a2a;
+
+    min-width: 12px;
+
+    border-radius: 0;
+}
+
+label {
+    color: #ebdbb2;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspaces */
+#workspaces button.active {
+    background: rgba(0, 0, 0, 0.2);
+    background-color: #191919;
+}
+
+#workspaces button.focused {
+    background-color: #3c3836;
+    color: #ebdbb2;
+}
+
+#workspaces button.urgent {
+    background-color: #fbf1c7;
+    color: #3c3836;
+}
+
+#mode {
+    background-color: #64727d;
+    border-bottom: 3px solid #fbf1c7;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#custom-poweroff,
+#custom-suspend,
+#mpd {
+    padding: 0 10px;
+    background-color: #000000;
+    color: #cccccc;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    color: #d70000;
+}
+
+#battery {
+    color: #00d700;
+}
+
+#battery.charging,
+#battery.plugged {
+    border: 1 dashed #00d700;
+}
+
+#backlight {
+    color: #00ffff;
+}
+
+#memory {
+    color: #00ff00;
+}
+
+#network {
+    color: #fb4934;
+}
+
+#network.disconnected {
+    background-color: #fbf1c7;
+    color: #9d0006;
+}
+
+/*#disk {
+    background-color: #964B00;
+}*/
+
+#pulseaudio {
+    color: #fe8019;
+}
+
+
+#tray {
+    background-color: #191919;
+}
+
+
+#tray>.needs-attention {
+    background-color: #fbf1c7;
+    color: #3c3836;
+}
+
+#idle_inhibitor {
+    background-color: #282828;
+    color: #ebdbb2;
+}
+
+#idle_inhibitor.activated {
+    background-color: #fbf1c7;
+    color: #3c3836;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+#language {
+    background: #00b093;
+    color: #740864;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: #97e1ad;
+    color: #000000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state>label {
+    padding: 0 5px;
+}
+
+#keyboard-state>label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#backlight-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#backlight-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+#backlight-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: red;
+}
