@@ -419,8 +419,8 @@ binds {
     Mod+Alt+TouchpadScrollDown { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+"; }
     Mod+Alt+TouchpadScrollUp   { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
 
-    Mod+Shift+TouchpadScrollDown { spawn "brightnessctl" "set" "5%-"; }
-    Mod+Shift+TouchpadScrollUp   { spawn "brightnessctl" "set" "+5%"; }
+    Mod+Shift+TouchpadScrollDown { spawn "brightnessctl" "set" "+5%"; }
+    Mod+Shift+TouchpadScrollUp   { spawn "brightnessctl" "set" "5%-"; }
 
     // You can refer to workspaces by index. However, keep in mind that
     // niri is a dynamic workspace system, so these commands are kind of
