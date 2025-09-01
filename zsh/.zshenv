@@ -16,7 +16,6 @@ export PATH=$ANDROID_HOME/build-tools/35.0.0/:$PATH
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 
-source "/home/hknhmr/.deno/env"
 
 export PATH=~/.pyenv/shims:$PATH
 
