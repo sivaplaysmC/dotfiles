@@ -694,3 +694,7 @@ end)
 later(function ()
     require("fidget").setup({})
 end)
+
+now(function ()
+    vim.cmd[[hi Normal guibg=None]]
+end)
