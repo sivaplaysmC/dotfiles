@@ -54,7 +54,7 @@ input {
 
 output "eDP-1" {
     // Uncomment this line to disable this output.
-    // off
+    off
 
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
@@ -70,8 +70,8 @@ output "HDMI-A-1" {
 
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "3840x2160"
-    scale 2.0
+    mode "1920x1080"
+    scale 1.0
     // position x=0 y=-1080
 }
 
