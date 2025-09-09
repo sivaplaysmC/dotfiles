@@ -679,6 +679,7 @@ later(function()
         "basedpyright",
         "rust_analyzer",
         "zls",
+        "tinymist",
     }
 
     for _, langserver in ipairs(enabled_langservers) do
