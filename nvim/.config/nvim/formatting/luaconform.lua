@@ -1,4 +1,4 @@
 return {
-    ft = "lua",
-    formatter = { "stylua" },
+	ft = "lua",
+	formatter = { "stylua" },
 }

@@ -2,11 +2,10 @@ local keymap = vim.keymap.set
 
 keymap("i", "<C-S-v>", "<C-r><C-o>*", { desc = "Paste from System in Insertmode" })
 
-
 local start_replace = function()
-    local word = vim.fn.expand("<cword>")
-    local cmd = ":%s/" .. word .. "/"
-    vim.api.nvim_feedkeys(cmd, "n", false)
+	local word = vim.fn.expand("<cword>")
+	local cmd = ":%s/" .. word .. "/"
+	vim.api.nvim_feedkeys(cmd, "n", false)
 end
 keymap("n", "<leader>rw", start_replace, { desc = "Start Replace" })
 
