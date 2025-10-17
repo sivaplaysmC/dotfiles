@@ -13,3 +13,11 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.keymap.set("n", "<C-k>", "<cmd>cN<CR>zz<cmd>wincmd p<CR>", opts)
 	end,
 })
+
+vim.keymap.set("n", "<C-q>", function()
+  if vim.fn.getqflist({ winid = 0 }).winid ~= 0 then
+    vim.cmd("cclose")
+  else
+    vim.cmd("copen")
+  end
+end, { desc = "Toggle Quickfix list" })

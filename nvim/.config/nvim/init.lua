@@ -65,9 +65,40 @@ now(function()
 	vim.cmd([[set nu]])
 end)
 
-later(function()
-	require("mini.align").setup()
-end)
+later(require("mini.align").setup)
+later(require("mini.bracketed").setup)
+later(require("mini.doc").setup)
+later(require("mini.extra").setup)
+later(require("mini.git").setup)
+later(require("mini.icons").setup)
+later(require("mini.jump").setup)
+later(require("mini.misc").setup)
+later(require("mini.bufremove").setup)
+later(require("mini.comment").setup)
+later(require("mini.operators").setup)
+later(require("mini.pairs").setup)
+later(require("mini.splitjoin").setup)
+later(require("mini.tabline").setup)
+later(require("mini.trailspace").setup)
+later(require("mini.visits").setup)
+later(require("fidget").setup)
+later(require("mini.align").setup)
+later(require("mini.bracketed").setup)
+later(require("mini.doc").setup)
+later(require("mini.extra").setup)
+later(require("mini.git").setup)
+later(require("mini.icons").setup)
+later(require("mini.jump").setup)
+later(require("mini.misc").setup)
+later(require("mini.bufremove").setup)
+later(require("mini.comment").setup)
+later(require("mini.operators").setup)
+later(require("mini.pairs").setup)
+later(require("mini.splitjoin").setup)
+later(require("mini.tabline").setup)
+later(require("mini.trailspace").setup)
+later(require("mini.visits").setup)
+later(require("fidget").setup)
 
 later(function()
 	require("mini.basics").setup({
@@ -84,12 +115,6 @@ later(function()
 			relnum_in_visual_mode = false,
 		},
 	})
-end)
-later(function()
-	require("mini.bracketed").setup()
-end)
-later(function()
-	require("mini.bufremove").setup()
 end)
 later(function()
 	require("mini.clue").setup({
@@ -151,10 +176,6 @@ later(function()
 end)
 
 later(function()
-	require("mini.comment").setup()
-end)
-
-later(function()
 	local opts = {
 		keymap = { preset = "default" },
 		appearance = {
@@ -184,24 +205,7 @@ later(function()
 		},
 	})
 end)
-later(function()
-	require("mini.doc").setup()
-end)
-later(function()
-	require("mini.extra").setup()
-end)
-later(function()
-	require("mini.git").setup()
-end)
-later(function()
-	require("mini.icons").setup()
-end)
-later(function()
-	require("mini.jump").setup()
-end)
-later(function()
-	require("mini.misc").setup()
-end)
+
 later(function()
 	require("mini.move").setup({
 		mappings = {
@@ -237,13 +241,7 @@ later(function()
 	})
 	vim.notify = MiniNotify.make_notify()
 end)
-later(function()
-	require("mini.operators").setup()
-end)
 
-later(function()
-	require("mini.pairs").setup()
-end)
 later(function()
 	local win_config = function()
 		local height = math.floor(0.618 * vim.o.lines)
@@ -270,9 +268,7 @@ later(function()
 	})
 	vim.ui.select = MiniPick.ui_select
 end)
-later(function()
-	require("mini.splitjoin").setup()
-end)
+
 later(function()
 	local gen_loader = require("mini.snippets").gen_loader
 	require("mini.snippets").setup({
@@ -351,15 +347,6 @@ later(function()
 		-- idle time if user input is required.
 		silent = false,
 	})
-end)
-later(function()
-	require("mini.tabline").setup()
-end)
-later(function()
-	require("mini.trailspace").setup()
-end)
-later(function()
-	require("mini.visits").setup()
 end)
 
 later(function()
@@ -664,6 +651,7 @@ later(function()
 		"rust_analyzer",
 		"zls",
 		"tinymist",
+		"vtsls",
 	}
 
 	for _, langserver in ipairs(enabled_langservers) do
@@ -687,6 +675,8 @@ later(function()
 					return { "isort", "black" }
 				end
 			end,
+			typescriptreact = { "prettier" },
+			javascript = { "prettier" },
 			-- Use the "*" filetype to run formatters on all filetypes.
 			["*"] = { "codespell" },
 			-- Use the "_" filetype to run formatters on filetypes that don't
@@ -695,10 +685,6 @@ later(function()
 		},
 	})
 	vim.keymap.set("n", "<leader>'", require("conform").format, { desc = "format buffer" })
-end)
-
-later(function()
-	require("fidget").setup({})
 end)
 
 now(function()
