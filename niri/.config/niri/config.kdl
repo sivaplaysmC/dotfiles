@@ -24,7 +24,7 @@ input {
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
         }
 
-        repeat-delay 200
+        repeat-delay 250
         repeat-rate 25
     }
 
@@ -54,7 +54,7 @@ input {
 
 output "eDP-1" {
     // Uncomment this line to disable this output.
-    off
+    // off
 
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
@@ -70,8 +70,8 @@ output "HDMI-A-1" {
 
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080"
-    scale 1.0
+    mode "3840x2160@60.000"
+    scale 3.0
     // position x=0 y=-1080
 }
 
@@ -492,9 +492,9 @@ binds {
     Mod+Space       { switch-layout "next"; }
     Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Mod+Alt+P { screenshot; }
+    Mod+Alt+Ctrl+P { screenshot-screen; }
+    Mod+Ctrl+P { screenshot-window; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
