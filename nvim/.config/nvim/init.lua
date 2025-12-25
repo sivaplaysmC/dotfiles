@@ -575,7 +575,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 later(function()
 	---@diagnostic disable-next-line: missing-fields
-	require("nvim-treesitter.configs").setup({
+	require("nvim-treesitter").setup({
 		-- Add languages to be installed here that you want installed for treesitter
 		sync_install = false,
 		ignore_install = {},
