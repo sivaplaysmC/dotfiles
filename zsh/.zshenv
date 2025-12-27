@@ -20,7 +20,7 @@ export PATH=$ANDROID_HOME/build-tools/35.0.0/:$PATH
 export PATH=~/.pyenv/shims:$PATH
 
 
-[ -x `command -v go` ] && export PATH="$(go env GOPATH)/bin:$PATH"
+type "go" >/dev/null && export PATH="$(go env GOPATH)/bin:$PATH"
 
 
 export FZF_POPUP_OPTS=(
