@@ -74,7 +74,7 @@ ZSH_THEME="afowler" # set by `omz`
 
 plugins=(git)
 plugins+=(fzf-tab)
-plugins+=(fzf-docker)
+# plugins+=(fzf-docker)
 
 # plugins+=(aws)
 # plugins+=(zsh-vi-mode)
