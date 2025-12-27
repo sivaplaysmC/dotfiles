@@ -27,7 +27,9 @@ assert libc is not None
 
 def start(argv=[], *a, **kw):
     if args.REMOTE:
-        return remote(args.HOST, args.PORT)
+        host, port_str = args.REMOTE.split(":")
+        port = int(port_str)
+        return remote(host, port)
     if args.GDB:
         return gdb.debug([exe.path] + argv, gdbscript=gdbscript, *a, **kw)
     else:
