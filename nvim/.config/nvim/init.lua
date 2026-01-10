@@ -51,8 +51,8 @@ now(function()
 	vim.o.tabstop = 4
 	vim.o.expandtab = true
 	vim.o.scrolloff = 10
-    vim.o.tgc = true
-    -- vim.o.clipboard = "unnamed,unnamedplus"
+	vim.o.tgc = true
+	-- vim.o.clipboard = "unnamed,unnamedplus"
 	vim.o.updatetime = 1000
 	vim.opt.iskeyword:append("-")
 	vim.o.spelllang = "de,en"
