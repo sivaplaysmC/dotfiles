@@ -134,7 +134,7 @@ fkill() {
 }
 
 if [[ `tty` ==  "/dev/tty1" ]]; then
-    niri-session;
+    startx;
 fi
 
 
