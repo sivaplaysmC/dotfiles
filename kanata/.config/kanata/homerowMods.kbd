@@ -5,6 +5,10 @@
 (defcfg
   process-unmapped-keys no
   linux-dev-names-exclude ("TPPS/2 Elan TrackPoint")
+   linux-dev-names-include (
+    "AT Translated Set 2 keyboard"
+    "ThinkPad Extra Buttons"
+  )
 )
 
 (defsrc
