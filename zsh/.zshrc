@@ -1,6 +1,7 @@
 export EDITOR=nvim
 ITERM_SHELL_INTEGRATION_INSTALLED=Yes
 
+export PATH="$HOME/.local/bin:$PATH"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
