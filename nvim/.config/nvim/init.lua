@@ -677,6 +677,7 @@ later(function()
 					return { "isort", "black" }
 				end
 			end,
+            c = { "clang-format" },
 			typescriptreact = { "prettier" },
 			javascript = { "prettier" },
 			-- Use the "*" filetype to run formatters on all filetypes.
