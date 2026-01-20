@@ -107,9 +107,7 @@ local wifi_setter = function(self, text)
 		return
 	end
 
-	local split = gears.string.split(text, " ")
-	local ap_name = split[1]
-	local ip_addr = split[2]
+    local ap_name, ip_addr = text:match("^(.*)%s(%S+)$")
 
 	if not ap_name or not ip_addr then
 		naughty.notify({ title = "WIFI", text = "No wifi. Hope you got ethernet :)" })
