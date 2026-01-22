@@ -107,7 +107,7 @@ local wifi_setter = function(self, text)
 		return
 	end
 
-    local ap_name, ip_addr = text:match("^(.*)%s(%S+)$")
+	local ap_name, ip_addr = text:match("^(.*)%s(%S+)$")
 
 	if not ap_name or not ip_addr then
 		naughty.notify({ title = "WIFI", text = "No wifi. Hope you got ethernet :)" })
@@ -560,7 +560,7 @@ awful.rules.rules = {
 
 	-- ts is to let dialog windows position themselves.
 	-- Ideally, we only want windows of ghidra to have this unconstrained placement -
-    -- no harm in having to fix this later.
+	-- no harm in having to fix this later.
 	{
 		rule = {
 			type = "dialog",
@@ -698,14 +698,19 @@ client.connect_signal("request::titlebars", function(c)
 				widget = wibox.container.margin,
 				margins = 5,
 			},
-			{
-				widget = awful.titlebar.widget.titlewidget(c),
-			},
 			buttons = buttons,
 			layout = wibox.layout.fixed.horizontal,
 			spacing = 10,
 		},
-		nil,
+		{
+			{
+				widget = awful.titlebar.widget.titlewidget(c),
+			},
+			widget = wibox.container.margin,
+			margins = {
+				left = 3,
+			},
+		},
 		{ -- Right
 			{
 				awful.titlebar.widget.floatingbutton(c),
