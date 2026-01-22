@@ -522,8 +522,23 @@ root.keys(GlobalKeys)
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
 	-- All clients will match this rule.
+	-- god forgive me for the two ugliest rules I'm going to write.
+	-- Goal: I don't want transient_for clients to have a placement -
+	-- Ideally, they should sit wherever they want.
+	--
+	-- but this catch-all rule is too wide, and as a result pop-ups for ghidra
+	-- (like the autocomplete window, hover window, etc.) are placed on the top-left
+	--
+	-- To fix this madness,
+	-- 1. Create exception so that dialogs, popups, and transient windows are not touched by awesome.
+	-- 2. Create a rule ONLY for dialogs, giving them perks like normal windows.
 	{
 		rule = {},
+		except_any = {
+			type = { "dialog" },
+			transient_for = { true },
+			role = { "pop-up" },
+		},
 		properties = {
 			border_width = beautiful.border_width,
 			border_color = beautiful.border_normal,
@@ -540,6 +555,26 @@ awful.rules.rules = {
 				awful.placement.no_overlap(c)
 				awful.placement.no_offscreen(c)
 			end,
+		},
+	},
+
+	-- ts is to let dialog windows position themselves.
+	-- Ideally, we only want windows of ghidra to have this unconstrained placement -
+    -- no harm in having to fix this later.
+	{
+		rule = {
+			type = "dialog",
+		},
+		properties = {
+			border_width = beautiful.border_width,
+			border_color = beautiful.border_normal,
+			titlebars_enabled = true,
+			floating = true,
+			focus = awful.client.focus.filter,
+			raise = true,
+			keys = clientkeys,
+			buttons = clientbuttons,
+			screen = awful.screen.preferred,
 		},
 	},
 
