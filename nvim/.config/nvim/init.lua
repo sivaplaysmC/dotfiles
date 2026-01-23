@@ -677,9 +677,10 @@ later(function()
 					return { "isort", "black" }
 				end
 			end,
-            c = { "clang-format" },
+			c = { "clang-format" },
 			typescriptreact = { "prettier" },
 			javascript = { "prettier" },
+			zig = { lsp_format = "prefer" },
 			-- Use the "*" filetype to run formatters on all filetypes.
 			["*"] = { "codespell" },
 			-- Use the "_" filetype to run formatters on filetypes that don't
