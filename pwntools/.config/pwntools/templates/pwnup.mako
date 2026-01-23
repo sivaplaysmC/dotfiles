@@ -25,6 +25,7 @@ libc = exe.libc
 assert libc is not None
 
 
+
 def start(argv=[], *a, **kw):
     if args.REMOTE:
         host, port_str = args.REMOTE.split(":")
@@ -36,11 +37,22 @@ def start(argv=[], *a, **kw):
         return process([exe.path] + argv, *a, **kw)
 
 
+
 gdbscript = """
 continue
 """.format(
     **locals()
 )
 
+def bp():
+    __import__("ipdb").set_trace()
+
+
 io = start()
+sla = io.sendlineafter
+sa = io.sendafter
+sl = io.sendline
+ru = io.recvuntil
+rl = io.recvline
+
 io.interactive()
