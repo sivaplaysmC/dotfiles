@@ -692,13 +692,11 @@ client.connect_signal("request::titlebars", function(c)
 			{
 				{
 					awful.titlebar.widget.iconwidget(c),
-					buttons = buttons,
 					layout = wibox.layout.fixed.horizontal,
 				},
 				widget = wibox.container.margin,
 				margins = 5,
 			},
-			buttons = buttons,
 			layout = wibox.layout.fixed.horizontal,
 			spacing = 10,
 		},
@@ -727,6 +725,7 @@ client.connect_signal("request::titlebars", function(c)
 			bottom = 5,
 			widget = wibox.container.margin,
 		},
+		buttons = buttons,
 		layout = wibox.layout.align.horizontal(),
 	})
 end)
