@@ -48,7 +48,7 @@ theme.fg_minimize = colors.foreground
 theme.border_normal = colors.grey3
 theme.border_focus = colors.blue
 theme.border_marked = colors.magenta
-
+theme.maximized_hide_border = true
 
 -- There are other variable sets
 -- overriding the default one when

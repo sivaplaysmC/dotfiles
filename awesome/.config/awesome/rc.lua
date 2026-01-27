@@ -699,6 +699,7 @@ client.connect_signal("request::titlebars", function(c)
 			},
 			layout = wibox.layout.fixed.horizontal,
 			spacing = 10,
+			buttons = buttons,
 		},
 		{
 			{
@@ -708,6 +709,7 @@ client.connect_signal("request::titlebars", function(c)
 			margins = {
 				left = 3,
 			},
+			buttons = buttons,
 		},
 		{ -- Right
 			{
@@ -725,7 +727,6 @@ client.connect_signal("request::titlebars", function(c)
 			bottom = 5,
 			widget = wibox.container.margin,
 		},
-		buttons = buttons,
 		layout = wibox.layout.align.horizontal(),
 	})
 end)
