@@ -6,12 +6,6 @@
 ---
 --- For installation instructions, please refer to the [ty documentation](https://github.com/astral-sh/ty/blob/main/README.md#getting-started).
 local tyconfig = {
-	rules = {
-		["unresolved-attribute"] = "ignore",
-	},
-	environment = {
-		python = "/usr/bin/python3",
-	},
 }
 
 ---@type vim.lsp.Config
