@@ -17,16 +17,18 @@ binary_repr = repr(binary)
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from pwn import *
+from pwnlib import gdb
+from typing import no_type_check
 
 context.terminal = "tmux neww -a".split()
 
-exe = context.binary = ELF(args.EXE or ${binary_repr})
+exe = context.binary = ELF(args.EXE or ${binary_repr}) # type: ignore
 libc = exe.libc
 assert libc is not None
 
 
-
-def start(argv=[], *a, **kw):
+@no_type_check
+def start(argv=[], *a, **kw) -> tube:
     if args.REMOTE:
         host, port_str = args.REMOTE.split(":")
         port = int(port_str)
@@ -37,12 +39,10 @@ def start(argv=[], *a, **kw):
         return process([exe.path] + argv, *a, **kw)
 
 
-
 gdbscript = """
 continue
-""".format(
-    **locals()
-)
+""".format(**locals())
+
 
 def bp():
     __import__("ipdb").set_trace()
