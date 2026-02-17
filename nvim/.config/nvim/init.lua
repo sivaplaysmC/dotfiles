@@ -745,3 +745,53 @@ later(function()
 		},
 	})
 end)
+
+function Paste_to_repl(text)
+	local pane = vim.fn.system("tmux show -gqv @repl_pane"):gsub("%s+", "")
+	if pane == "" then
+		print("No REPL pane set")
+		return
+	end
+
+	-- load buffer
+	vim.fn.system({ "tmux", "load-buffer", "-" }, text)
+	-- paste (tmux handles bracketed paste)
+	vim.fn.system({ "tmux", "paste-buffer", "-p", "-t", pane })
+	vim.fn.system({ "tmux", "send-keys", "-t", pane, "Enter" })
+end
+
+_G.repl_operator = function(type)
+	local start_pos, end_pos
+
+	if type == "char" or type == "line" then
+		start_pos = vim.fn.getpos("'[")
+		end_pos = vim.fn.getpos("']")
+	else
+		-- visual mode
+		start_pos = vim.fn.getpos("'<")
+		end_pos = vim.fn.getpos("'>")
+	end
+
+	local lines = vim.fn.getline(start_pos[2], end_pos[2])
+	if #lines == 0 then
+		return
+	end
+
+	-- trim for charwise selection
+	if type == "char" then
+		lines[#lines] = string.sub(lines[#lines], 1, end_pos[3])
+		lines[1] = string.sub(lines[1], start_pos[3])
+	end
+
+	Paste_to_repl(table.concat(lines, "\n"))
+end
+
+vim.keymap.set("n", "<leader>.", function()
+	vim.go.operatorfunc = "v:lua.repl_operator"
+	return "g@"
+end, { expr = true })
+
+vim.keymap.set("v", "<leader>.", function()
+	vim.go.operatorfunc = "v:lua.repl_operator"
+	vim.cmd("normal! g@")
+end)
