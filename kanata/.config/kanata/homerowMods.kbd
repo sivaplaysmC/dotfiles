@@ -36,7 +36,7 @@
   f (tap-hold $tap-time $hold-time f lsft)
   j (tap-hold $tap-time $hold-time j rsft)
   k (tap-hold $tap-time $hold-time k rctl)
-  l (tap-hold $tap-time $hold-time l ralt)
+  l (tap-hold $tap-time $hold-time l lalt)
   ; (tap-hold $tap-time $hold-time ; rmet)
 
 
@@ -47,7 +47,7 @@
   caps (tap-hold $tap-time $hold-time esc caps)             ;; Caps Lock:   Tap = Escape          Hold = Caps 
   lmet (tap-hold $tap-time $hold-time ret lmet)             ;; Windows Key: Tap = Return          Hold = Windows Key
   lalt (tap-hold $tap-time $hold-time del lalt)             ;; Left Alt:    Tap = Delete          Hold = Cursor Layer
-  ralt (tap-hold $tap-time $hold-time bks ralt)             ;; Right Alt:   Tap = Backspace       Hold = Right Alt  
+  ralt (tap-hold $tap-time $hold-time bks lalt)             ;; Right Alt:   Tap = Backspace       Hold = Right Alt 
   rsft (tap-dance 500 (rsft(caps-word 2000)))         ;; Right Shift: Tap = Right Shift     Double = Caps word 
 )
 
