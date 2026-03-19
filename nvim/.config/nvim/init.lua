@@ -24,7 +24,10 @@ add("ibhagwan/fzf-lua")
 add("mikavilpas/yazi.nvim")
 add("nvim-lua/plenary.nvim")
 add("stevearc/conform.nvim")
-add("nvim-treesitter/nvim-treesitter")
+add({
+	source = "nvim-treesitter/nvim-treesitter",
+	checkout = "main",
+})
 add({
 	source = "saghen/blink.cmp",
 	depends = { "rafamadriz/friendly-snippets" },
@@ -195,11 +198,6 @@ later(function()
 end)
 
 later(function()
-	require("mini.cursorword").setup()
-	vim.api.nvim_set_hl(0, "MiniCursorword", { underline = true })
-	vim.api.nvim_set_hl(0, "MiniCursorwordCurrent", { underline = false, bg = NONE })
-end)
-later(function()
 	require("mini.diff").setup({
 		view = {
 			style = "sign",
@@ -284,6 +282,8 @@ later(function()
 		},
 	})
 end)
+
+---@diagnostic disable: undefined-global
 later(function()
 	require("mini.statusline").setup({
 		content = {
@@ -576,11 +576,40 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 later(function()
-	local filetypes =
-		{ "bash", "c", "diff", "html", "lua", "luadoc", "markdown", "markdown_inline", "query", "vim", "vimdoc" }
+	local ts_types = {
+		"bash",
+		"c",
+		"diff",
+		"html",
+		"lua",
+		"luadoc",
+		"markdown",
+		"markdown_inline",
+		"query",
+		"vim",
+		"vimdoc",
+		"python",
+	}
+
+	require("nvim-treesitter.configs").setup({
+		-- A list of parser names, or "all"
+		ensure_installed = ts_types,
+
+		-- Install parsers synchronously (only applied to `ensure_installed`)
+		sync_install = false,
+
+		-- Automatically install missing parsers when entering buffer
+		auto_install = true,
+
+		highlight = {
+			enable = true,
+			additional_vim_regex_highlighting = false,
+		},
+	})
+
 	-- require("nvim-treesitter").install(filetypes)
 	vim.api.nvim_create_autocmd("FileType", {
-		pattern = filetypes,
+		pattern = ts_types,
 		callback = function()
 			vim.treesitter.start()
 		end,
@@ -592,7 +621,7 @@ later(function()
 		"lua-language-server",
 		"gopls",
 		"clangd",
-		"ty",
+		"basedpyright",
 		"rust_analyzer",
 		"zls",
 		"tinymist",
@@ -636,6 +665,10 @@ end)
 
 now(function()
 	vim.cmd([[hi Normal guibg=None]])
+	vim.api.nvim_set_hl(0, "TabLineSel", {
+		bold = true,
+		italic = true,
+	})
 end)
 
 later(function()
