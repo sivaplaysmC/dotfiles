@@ -31,10 +31,6 @@ add({
 add("j-hui/fidget.nvim")
 add("hxueh/beancount.nvim")
 
-local blink_downloadlibs = function()
-	require("blink.cmp.fuzzy.download").ensure_downloaded(function(_, _) end)
-end
-
 add({
 	source = "saghen/blink.cmp",
 	depends = { "rafamadriz/friendly-snippets" },

@@ -152,3 +152,5 @@ function n() {
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export QT_QPA_PLATFORMTHEME=qt5ct
+
+export FZF_COMPLETION_TRIGGER=','
