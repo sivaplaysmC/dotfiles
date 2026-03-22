@@ -39,7 +39,7 @@ add({
 	source = "saghen/blink.cmp",
 	depends = { "rafamadriz/friendly-snippets" },
 	checkout = "v1.6.0", -- check releases for latest tag
-	hooks = { post_install = blink_downloadlibs },
+	-- hooks = { post_install = blink_downloadlibs },
 })
 
 -- Neovim Options
@@ -597,7 +597,7 @@ later(function()
 		"python",
 	}
 
-	require("nvim-treesitter.configs").setup({
+	require("nvim-treesitter").setup({
 		-- A list of parser names, or "all"
 		ensure_installed = ts_types,
 
