@@ -154,3 +154,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 export FZF_COMPLETION_TRIGGER=','
+
+preexec () {
+  echo -n "\\x1b]133;A\\x1b\\"
+}
