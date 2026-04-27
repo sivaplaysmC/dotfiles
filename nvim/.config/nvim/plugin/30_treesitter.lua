@@ -22,6 +22,7 @@ now_if_args(function()
 		"vimdoc",
 		"python",
 	}
+	_G.ts_types = ts_types
 	require('nvim-treesitter').install(ts_types)
 
 	-- Install missing parsers via native vim.treesitter
